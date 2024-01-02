@@ -8,7 +8,7 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: An AWS Serverless Specification template describing your function.
 Resources:
-  objectRecognation:
+  rekonObject:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: .
@@ -16,7 +16,7 @@ Resources:
       MemorySize: 128
       Timeout: 3
       Handler: lambda_function.lambda_handler
-      Runtime: python3.11
+      Runtime: python3.12
       Architectures:
         - x86_64
       EventInvokeConfig:
@@ -42,14 +42,18 @@ Resources:
             - Effect: Allow
               Action:
                 - logs:CreateLogGroup
-              Resource: arn:aws:logs:eu-north-1:837614956853:*
+              Resource: arn:aws:logs:eu-central-1:837614956853:*
             - Effect: Allow
               Action:
                 - logs:CreateLogStream
                 - logs:PutLogEvents
               Resource:
                 - >-
-                  arn:aws:logs:eu-north-1:837614956853:log-group:/aws/lambda/objectRecognation:*
+                  arn:aws:logs:eu-central-1:837614956853:log-group:/aws/lambda/rekonObject:*
+            - Effect: Allow
+              Action:
+                - rekognition:*
+              Resource: '*'
             - Action:
                 - dynamodb:*
                 - dax:*
