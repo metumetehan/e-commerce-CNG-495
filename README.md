@@ -1,4 +1,2 @@
 # e-commerce-CNG-495
-e commerce application repository for CNG495 cloud computing
-This repository includes documents folder that has the project proposal and progress report.
-You can find code commits in the server folder.
+this is the old version of the project. You can access the new repository using this link: https://github.com/ChesterMETU/e_commerce_CNG495.git
